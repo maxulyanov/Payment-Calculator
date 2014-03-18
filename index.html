@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Расчетный калькулятор стоимости сайта - M.Ulyanov</title>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700&subset=latin,cyrillic-ext,cyrillic' rel='stylesheet' type='text/css'>
+<link href="css/style.css" type="text/css" rel="stylesheet">
+<script src="js/jquery-1.10.2.js"></script>
+<script src="js/scripts.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+    	<h1>Калькулятор стоимости сайта</h1>
+    	<div id="step-wrapper">
+	    	<div class="step step-1">
+	    		<h2>Дизайн:</h2>
+	    		<div class="desing-type">
+	    			<div class="title">
+	    				<a href="#">Уже есть</a>
+	    				<div class="hide-desc">
+	    					У вас уже есть свой дизайн и вас интересует HTML-верстка и последующий функционал.
+	    				</div>	
+	    			</div>
+	    			<div class="check">
+	    				<span class="price">
+	    					<span class="cost">0</span>руб.
+	    				</span>
+	    				<input type="checkbox">	
+	    			</div>
+	    		</div>
+	    		<div class="desing-type">
+	    			<div class="title">
+	    				<a href="#">Шаблонный</a>
+	    				<div class="hide-desc">
+	    					Это бюджетный вариант дизайна для сайта.Шаблонный дизайн сайта, это решение, которое разрабатывается не индивидуально под Вашу компанию, а под несколько.
+	    				</div>	
+	    			</div>
+	    			<div class="check">
+	    				<span class="price">
+	    					<span class="cost">1000</span>руб.
+	    				</span>
+	    				<input type="checkbox">	
+	    			</div>
+	    		</div>
+	    		<div class="desing-type">
+	    			<div class="title">
+	    				<a href="#">Обычный</a>
+	    				<div class="hide-desc">
+	    					Вы показываете примеры понравившихся дизайнов, мы создаем схожий индивидуальный дизайн.
+	    				</div>	
+	    			</div>
+	    			<div class="check">
+	    				<span class="price">
+	    					<span class="cost">2000</span>руб.
+	    				</span>
+	    				<input type="checkbox">	
+	    			</div>
+	    		</div>
+	    		<div class="desing-type">
+	    			<div class="title">
+	    				<a href="#">Эксклюзивный</a>
+	    				<div class="hide-desc">
+	    					Яркий, красочный, эксклюзивный дизайн выделит ваш сайт среди конкурентов.
+	    				</div>	
+	    			</div>
+	    			<div class="check">
+	    				<span class="price">
+	    					<span class="cost">4000</span>руб.
+	    				</span>
+	    				<input type="checkbox">	
+	    			</div>
+	    		</div>
+	    		<div id="num-desing-page">
+					<span>Количество страниц:</span>
+	                <input type="text" id="desing-page" maxlength="2">
+	    		</div>
+	    		<a href="#" class="next-step">Далее</a>
+	    	</div>
+	    	<div class="step step-2">
+	    		<h2>HTML-верстка:</h2>
+	    		<div class="html-type">
+	    			<div class="title">
+	    				<a href="#">Фиксированная</a>
+	    				<div class="hide-desc">
+	    					Верстка сайта, когда его ширина всегда одинакова вне зависимости от экрана посетителя. Обычно используется ширина 980px, которая адаптирована к планшетам и мониторам, от 1024px.
+	    				</div>	
+	    			</div>
+	    			<div class="check">
+	    				<span class="price">
+	    					<span class="cost">1500</span>руб.
+	    				</span>
+	    				<input type="checkbox">	
+	    			</div>
+	    		</div>
+	    		<div class="html-type">
+	    			<div class="title">
+	    				<a href="#">Резиновая</a>
+	    				<div class="hide-desc">
+	    					 Верстка, не имеющая постоянной ширины. Адаптируется к ширине экрана посетителя и как правило задается в процентах.
+	    				</div>	
+	    			</div>
+	    			<div class="check">
+	    				<span class="price">
+	    					<span class="cost">2500</span>руб.
+	    				</span>
+	    				<input type="checkbox">	
+	    			</div>
+	    		</div>
+	    		<div class="html-type">
+	    			<div class="title">
+	    				<a href="#">Адаптивная</a>
+	    				<div class="hide-desc">
+					 		В соответствии с названием адаптируется к экрану, однако не только в части ширины, но и его ориентации (вертикаль/горизонталь) и даже подстраивается под конкретный тип устройства. Позволяет полностью перестраивать дизайн сайта для просмотра на различных мониторах и мобильных гаджетах.
+	    				</div>	
+	    			</div>
+	    			<div class="check">
+	    				<span class="price">
+	    					<span class="cost">4000</span>руб.
+	    				</span>
+	    				<input type="checkbox">	
+	    			</div>
+	    		</div>
+	    		<div id="num-html-page">
+					<span>Количество страниц:</span>
+	                <input type="text" id="html-page" maxlength="6">
+	    		</div>
+	    		<a href="#" class="next-step">Далее</a>
+	    	</div>
+	    	<div class="step step-3">
+	    		<h2>Функционал:</h2>
+	    		<div class="code-type">
+	    			<div class="title">
+	    				<a href="#">Интеграция на CMS</a>
+	    				<div class="hide-desc">
+	    					Интеграция в CMS подразумевает под собой развёртывание сайтов на движке (системе управления сайтом).
+	    					Интеграция в CMS включает в себя установку системы управления сайтом на сервер, создание шаблона на основе вёрстки, создание структуры сайта, настройку модулей и сервисов
+	    				</div>	
+	    			</div>
+	    			<div class="check">
+	    				<span class="price">
+	    					<span class="cost">6500</span>руб.
+	    				</span>
+	    				<input type="checkbox">	
+	    			</div>
+	    		</div>
+	    		<div class="code-type">
+	    			<div class="title">
+	    				<a href="#">Поиск по сайту</a>
+	    				<div class="hide-desc">
+	    					Поиск по сайту — технология, предоставляющая пользователю возможность осуществлять поиск заданной строки среди материалов конкретного веб-сайта. 
+	    				</div>	
+	    			</div>
+	    			<div class="check">
+	    				<span class="price">
+	    					<span class="cost">1500</span>руб.
+	    				</span>
+	    				<input type="checkbox">	
+	    			</div>
+	    		</div>
+	    		<div class="code-type">
+	    			<div class="title">
+	    				<a href="#">Лента новостей / статьи</a>
+	    				<div class="hide-desc">
+	    					Модуль, позволяющий добавлять и редактировать статьи или новости на сайте.
+	    				</div>	
+	    			</div>
+	    			<div class="check">
+	    				<span class="price">
+	    					<span class="cost">3500</span>руб.
+	    				</span>
+	    				<input type="checkbox">	
+	    			</div>
+	    		</div>
+	    		<div class="code-type">
+	    			<div class="title">
+	    				<a href="#">Опросы / Голосования</a>
+	    				<div class="hide-desc">
+	    					Позволяет организовывать на сайте голосования или опросы посетителей.
+	    				</div>	
+	    			</div>
+	    			<div class="check">
+	    				<span class="price">
+	    					<span class="cost">1500</span>руб.
+	    				</span>
+	    				<input type="checkbox">	
+	    			</div>
+	    		</div>
+	    		<div class="code-type">
+	    			<div class="title">
+	    				<a href="#">Регистрация пользователей + личный кабинет</a>
+	    				<div class="hide-desc">
+	    					 Присутствие на сайте личного кабинета пользователя с возможностью редактирования профиля, управления подпиской на новости, а также возможностью просмотра контента только для авторизованных посетителей (страницы, документы, файловый архив и т. д.), а также доступ к расширенным функциям сайта (к примеру, комментированию статей).
+	    				</div>	
+	    			</div>
+	    			<div class="check">
+	    				<span class="price">
+	    					<span class="cost">6500</span>руб.
+	    				</span>
+	    				<input type="checkbox">	
+	    			</div>
+	    		</div>
+	    		<div class="code-type">
+	    			<div class="title">
+	    				<a href="#">Форма обратной связи</a>
+	    				<div class="hide-desc">
+	    					Форма, с помощью которой посетитель может отправить письмо менеджеру или администратору сайта.
+	    				</div>	
+	    			</div>
+	    			<div class="check">
+	    				<span class="price">
+	    					<span class="cost">1500</span>руб.
+	    				</span>
+	    				<input type="checkbox">	
+	    			</div>
+	    		</div>
+	    		<div class="code-type">
+	    			<div class="title">
+	    				<a href="#">Отзывы</a>
+	    				<div class="hide-desc">
+	    					Отзыв автоматически публикуется на сайте, однако изначально виден только модератору(можно настроить автоматические появление), после проверки которого он появляется на сайте в открытом виде.
+	    				</div>	
+	    			</div>
+	    			<div class="check">
+	    				<span class="price">
+	    					<span class="cost">2500</span>руб.
+	    				</span>
+	    				<input type="checkbox">	
+	    			</div>
+	    		</div>
+	    		<div class="code-type">
+	    			<div class="title">
+	    				<a href="#">Динамические элементы(модальные окна, слайдеры)</a>
+	    				<div class="hide-desc">
+	    					Сюда входят все динамические элементы, слайдеры, модальные окна, скроллбары, различные эффекты.Цена указана за 1 элемент.
+	    				</div>	
+	    			</div>
+	    			<div class="check">
+	    				<span class="price">
+	    					<span class="cost">2500</span>руб.
+	    				</span>
+	    				<input type="checkbox">	
+	    			</div>
+	    		</div>
+	    		<div class="code-type">
+	    			<div class="title">
+	    				<a href="#">Интеграция с соц.сетями</a>
+	    				<div class="hide-desc">
+	    					Установка на сайт социальных инструментов, кнопок «Поделиться», «Мне нравится» или виджетов Facebook, ВКонтакте, Одноклассников и т.п.
+	    				</div>	
+	    			</div>
+	    			<div class="check">
+	    				<span class="price">
+	    					<span class="cost">1500</span>руб.
+	    				</span>
+	    				<input type="checkbox">	
+	    			</div>
+	    		</div>
+	    		<a href="#" class="next-step">Далее</a>
+	    	</div>
+	    	<div class="step step-4">
+	    		<h2>SEO-оптимизация:</h2>
+	    		<div class="seo-type">
+	    			<div class="title">
+	    				<a href="#">Внутренняя оптимизация</a>
+	    				<div class="hide-desc">
+	    					Внутренняя оптимизация сайта – это действия, направленные на изменение содержимого сайта, чтобы поисковые системы лучше его индексировали. 
+	    				</div>	
+	    			</div>
+	    			<div class="check">
+	    				<span class="price">
+	    					<span class="cost">12000</span>руб.
+	    				</span>
+	    				<input type="checkbox">	
+	    			</div>
+	    		</div>
+	    		<div class="seo-type">
+	    			<div class="title">
+	    				<a href="#">Внешняя оптимизация</a>
+	    				<div class="hide-desc">
+	    					Внешняя оптимизация заключается в работе с поисковиками, тематическими каталогами, биржами ссылок и другими сервисами с целью наращивания внешней ссылочной массы
+	    				</div>	
+	    			</div>
+	    			<div class="check">
+	    				<span class="price">
+	    					<span class="cost">30000</span>руб.
+	    				</span>
+	    				<input type="checkbox">	
+	    			</div>
+	    		</div>
+	    		<div class="seo-type">
+	    			<div class="title">
+	    				<a href="#">Поведенческий маркетинг</a>
+	    				<div class="hide-desc">
+	    					Поведенческий маркетинг: как заставить ваших покупателей полюбить вас.
+	    				</div>	
+	    			</div>
+	    			<div class="check">
+	    				<span class="price">
+	    					<span class="cost">8000</span>руб.
+	    				</span>
+	    				<input type="checkbox">	
+	    			</div>
+	    		</div>
+	    		<div class="seo-type">
+	    			<div class="title">
+	    				<a href="#">Привязка сайта к региону продвижения</a>
+	    				<div class="hide-desc">
+	    					Привязка к региону -  это важный фактор эффективности продвижения сайтов.
+	    				</div>	
+	    			</div>
+	    			<div class="check">
+	    				<span class="price">
+	    					<span class="cost">4000</span>руб.
+	    				</span>
+	    				<input type="checkbox">	
+	    			</div>
+	    		</div>
+	    		<div class="seo-type">
+	    			<div class="title">
+	    				<a href="#">Я не хочу иметь много клиентов</a>
+	    				<div class="hide-desc">
+	    					Вы решаете продвигать себе сами, но лучше все же доверить это дело профессионалам!
+	    				</div>	
+	    			</div>
+	    			<div class="check">
+	    				<span class="price">
+	    					<span class="cost">4000</span>руб.
+	    				</span>
+	    				<input type="checkbox">	
+	    			</div>
+	    		</div>
+	    		<a href="#" class="next-step">Готово</a>
+	    	</div>
+    	</div>
+    	<div id="progress">
+    		<div id="progress-bar">
+    			<div id="progress-inner">0%</div>
+    		</div>
+    		<div id="progress-step">
+    			<p>шаг <span>1</span> из <span>4</span></p>
+    			<a href="#" id="button-payment">Посчитать</a>
+    		</div>
+    	</div>
+    	<div id="result">
+    		<h2>Расчет стоимости сайта:</h2>
+    		<div id="in-total"></div>
+    		<a href="#" id="button-order">Оформить заявку</a>
+    	</div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,102 @@
+/*Reset*/
+*{
+    margin:0;
+    padding:0;
+}
+img{
+    border:none;
+}
+input{
+    
+    border:none;
+}
+ul{
+    list-style: none;
+}
+h1, h2, h3, h4, h5, h6{
+    font-weight: normal;
+}
+input,select,option{
+    outline:0;
+    border:0;
+}
+a{
+    text-decoration: none;
+}
+
+
+/*STYLE*/
+#wrapper{
+    min-width: 960px;
+    max-width: 1280px;
+    margin: 0 auto;
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: #000;
+    position: relative;
+}
+#step-wrapper{
+    overflow: hidden;
+    padding:0 10px;
+}
+.step{
+    width:47%;
+    float: left;
+    min-height: 250px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background: rgb(238,238,238); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(238,238,238,1) 0%, rgba(204,204,204,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(238,238,238,1)), color-stop(100%,rgba(204,204,204,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=0 ); /* IE6-9 */
+}
+.step-2,
+.step-3,
+.step-4{
+    display: none;
+    position: relative;
+}
+.step-1{
+    z-index: 5;
+    position: relative;
+}
+.step-2{
+    float: right;
+    top: 0;
+    left: -90%;
+    z-index: 4;
+}
+.step-3{
+    float: right;
+    top: -500px;
+    z-index: 3;
+}
+.step-4{
+    left: 90%;
+    top: 155px;
+    z-index: 2;
+}
+.next-step{
+    float:right;
+}
+
+#progress-bar{
+    border:1px solid red;
+    width: 47%;
+}
+
+#progress-inner{
+    background: blue;
+    height:100%;
+    width:0%;
+}
+#button-payment{
+    display: none;
+}
+.green{
+    color: green;
+}
