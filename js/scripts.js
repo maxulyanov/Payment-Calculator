@@ -23,11 +23,11 @@ $(function(){
                     });
                     $(parentStep).next('.step').animate({
                         opacity: "show",
-                        left: '6%'
+                        left: '4%'
                     }, 800);
                     $('.arrow-1').delay(400).animate({
                         opacity: "show",
-                        right : "-40px"
+                        right : "-30px"
                     }, 400);
                     progressPlus();
                     stepPlus();
@@ -44,11 +44,11 @@ $(function(){
                     });
                     $(parentStep).next('.step').animate({
                         opacity: "show",
-                        top: '75px'
+                        top: '51px'
                     }, 800);
                     $('.arrow-2').delay(400).animate({
                         opacity: "show",
-                        top : "75%"
+                        bottom : "-34px"
                     }, 400);
                     progressPlus();
                     stepPlus();
@@ -58,16 +58,20 @@ $(function(){
                 }
             }
             else if(parentStep.hasClass('step-3')){
-                 $(this).hide();
-                 $(this).parents('.step').find('.overlay').animate({
+                $(this).hide();
+                $(this).parents('.step').find('.overlay').animate({
                         opacity : 'show'
                     });
-                 $(parentStep).next('.step').animate({
+                $(parentStep).next('.step').animate({
                         opacity: "show",
                         left: '0%'
-                    })
-                    progressPlus();
-                    stepPlus();
+                }, 800);
+                $('.arrow-3').delay(400).animate({
+                        opacity: "show",
+                        left : "-34px"
+                }, 400);
+                progressPlus();
+                stepPlus();
             }
             else if(parentStep.hasClass('step-4')){
                 $(this).hide();
@@ -97,11 +101,12 @@ $(function(){
         }
     });
 
-    $('#button-payment').on('click', function(){
+    $('#button-payment').on('click', function(event){
+        event.preventDefault();
         $('.active-item').each(function() {
             var costTxt = $(this).find('.check').find('.price').text();
             var cost = $(this).find('.check').find('.cost').text();
-            var txt = $(this).find('title a').text();
+            var txt = $(this).find('.title a').text();
             var itemOrder = txt + costTxt;
             var parent = $(this).parents('.step');
             if(parent.hasClass('step-1')){
