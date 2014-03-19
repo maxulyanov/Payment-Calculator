@@ -18,10 +18,17 @@ $(function(){
             if(parentStep.hasClass('step-1')){
                 if($('#desing-page').val() !== '' && $('#desing-page').val() !== '0'){
                     $(this).hide();
+                    $(this).parents('.step').find('.overlay').animate({
+                        opacity : 'show'
+                    });
                     $(parentStep).next('.step').animate({
                         opacity: "show",
-                        left: '0%'
-                    })
+                        left: '6%'
+                    }, 800);
+                    $('.arrow-1').delay(400).animate({
+                        opacity: "show",
+                        right : "-40px"
+                    }, 400);
                     progressPlus();
                     stepPlus();
                 }
@@ -32,10 +39,17 @@ $(function(){
             else if(parentStep.hasClass('step-2')){
                 if($('#html-page').val() !== ''){
                     $(this).hide();
+                    $(this).parents('.step').find('.overlay').animate({
+                        opacity : 'show'
+                    });
                     $(parentStep).next('.step').animate({
                         opacity: "show",
-                        top: '0'
-                    })
+                        top: '75px'
+                    }, 800);
+                    $('.arrow-2').delay(400).animate({
+                        opacity: "show",
+                        top : "75%"
+                    }, 400);
                     progressPlus();
                     stepPlus();
                 }
@@ -45,6 +59,9 @@ $(function(){
             }
             else if(parentStep.hasClass('step-3')){
                  $(this).hide();
+                 $(this).parents('.step').find('.overlay').animate({
+                        opacity : 'show'
+                    });
                  $(parentStep).next('.step').animate({
                         opacity: "show",
                         left: '0%'
@@ -54,6 +71,9 @@ $(function(){
             }
             else if(parentStep.hasClass('step-4')){
                 $(this).hide();
+                $(this).parents('.step').find('.overlay').animate({
+                        opacity : 'show'
+                    });
                 progressPlus();
                 stepPlus();
                 $('#progress-step > p').text('Готово');
@@ -78,10 +98,10 @@ $(function(){
     });
 
     $('#button-payment').on('click', function(){
-        $('.green').each(function() {
-            var costTxt = $(this).parents('.title').next('.check').find('.price').text();
-            var cost = $(this).parents('.title').next('.check').find('.cost').text();
-            var txt = $(this).text();
+        $('.active-item').each(function() {
+            var costTxt = $(this).find('.check').find('.price').text();
+            var cost = $(this).find('.check').find('.cost').text();
+            var txt = $(this).find('title a').text();
             var itemOrder = txt + costTxt;
             var parent = $(this).parents('.step');
             if(parent.hasClass('step-1')){
@@ -119,24 +139,34 @@ $(function(){
         if($(this).prop('checked')){
             $(this).parents('.step').find('input[type="checkbox"]')
             .attr('disabled', 'disabled');
+            $(this).parents('.step').find('label').addClass('disabled-check');
+            $(this).next('label').removeClass('disabled-check');
             $(this).removeAttr('disabled');
+
         }
         else{
             $(this).parents('.step').find('input[type="checkbox"]')
             .removeAttr('disabled');
+            $(this).parents('.step').find('label').removeClass('disabled-check');
         }
     });
 
+    $("input[type='checkbox']").change(function(){ 
+        if($(this).is(":checked")){ 
+            $(this).next("label").addClass("active-check"); 
+        }else{   
+            $(this).next("label").removeClass("active-check");
+        }  
+    }); 
+
 
     //Выделение активного чека
-    $('input[type="checkbox"]').on('click', function(){
+    $('input[type="checkbox"]').change(function(){
         if($(this).prop('checked')){
-            $(this).parents('.check').prev('.title')
-            .find('a:first').addClass('green');
+            $(this).parents('.item-type').addClass('active-item');
         }
         else{
-            $(this).parents('.check').prev('.title')
-            .find('a:first').removeClass('green');
+            $(this).parents('.item-type').removeClass('active-item');
         }
     });
 
