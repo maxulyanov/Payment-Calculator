@@ -7,6 +7,7 @@ $(function(){
         n2 = 0,
         n3 = 0,
         n4 = 0,
+        procent = 0,
         arr = [];
 
 
@@ -80,8 +81,8 @@ $(function(){
                     });
                 progressPlus();
                 stepPlus();
-                $('#progress-step > p').text('Готово');
-                $('#button-payment').show();
+                $('#progress-step > p').hide(400);
+                $('#button-payment').show(400);
             }
         }
         else{
@@ -131,8 +132,9 @@ $(function(){
 
             total = n1 + n2 + n3 + n4;
         });
-        for(var i = 0;i < arr.length;i++){
-             $('#in-total').append('<p>' + arr[i] + '</p>');
+        var cacheArr;
+        for(var i = 0, cacheArr = arr.length;i <cacheArr; i++){
+            $('#in-total').append('<p>' + arr[i] + '</p>');
         }
         $('#in-total').append('<h2>' +  total + '</h2>');
     })
@@ -191,13 +193,14 @@ $(function(){
         $(this).next('.hide-desc').toggle(250);
     }); 
 
-
     //Вызываемые функции
     function stepPlus(){
         step++;
         $('#progress-step > p > span:first').text(step);
     }
     function progressPlus(){
-        $('#progress-inner').animate({width : '+=25%'})
+        $('#progress-inner').animate({width : '+=25%'});
+        procent +=25;
+        $('#progress-inner').text(procent + '%');
     }
 });

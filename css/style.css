@@ -26,10 +26,13 @@ a{
 
 
 /*STYLE*/
+html{
+    overflow-y: scroll;
+}
 body{
     font-family: 'Open Sans Condensed', sans-serif;
     color: #000;
-    background:url(../img/fon.png);
+    background:url(../img/bg.png);
 }
 #wrapper{
     min-width: 960px;
@@ -160,7 +163,16 @@ body{
 }
 
 #button-payment{
-    
+    display: none;
+    position: relative;
+    top: 2px;
+    right: 110px;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    background: rgb(35, 175, 35);
+    border-bottom: 2px solid rgb(19, 134, 19);
+    color: #FFF;
+    padding: 2px 10px;
 }
 .active-item{
     background: rgb(237, 255, 241) !important;
@@ -256,25 +268,36 @@ input[type='checkbox']{
     float: left;
     margin-top: 20px;
     width: 48%;
+    position: relative;
 }
 #progress-bar{
     width: 65%;
     float: left;
-    background:url(../img/bg2.png) no-repeat;
+    background: url(../img/bg.png);
+    border: 2px solid #FFF;
+    height: 25px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
 }
-#progress-inner {
-    background:url(../img/bg.png) no-repeat;
+#progress-inner{
+    background: rgb(35, 175, 35);
     height: 100%;
-    width: 0;
+    width: 0%;
+    text-align: center;
+    color: #FFF;
+    text-indent: 5px;
 }
 #progress-step{
     float: right;
 }
 #progress-step p{
-
+    color: #FFF;
+    font-size: 14px;
 }
 #progress-step p span{
-
+    font-size: 20px;
+    font-weight: bold;
 }
 #result{
     clear: both;
