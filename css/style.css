@@ -38,8 +38,17 @@ body{
     min-width: 960px;
     max-width: 1280px;
     margin: 0 auto;
+    padding: 0 10px;
     position: relative;
     overflow: hidden;
+}
+h1{
+    color: #FFF;
+    margin: 10px 0 20px 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 24px;
+    text-align: center;
 }
 #step-wrapper:after{
     content: '';
@@ -87,6 +96,10 @@ body{
     z-index: 2;
     
 }
+.step-3 .step-inner,
+.step-4 .step-inner{
+    padding-bottom: 65px;
+}
 .step .step-inner > h2{
     text-align: center;
     text-transform: uppercase;
@@ -95,8 +108,7 @@ body{
     color: #424242;
     margin-top: 5px;
 }
-.step-3 > .step-inner,
-.step-4 > .step-inner{
+.bottom-action{
     padding-bottom: 65px;
 }
 .step .item-type{
@@ -104,6 +116,9 @@ body{
     border-bottom: 1px solid rgb(231, 231, 231);
     padding: 7px 5px;
     background: rgb(250,250,250);
+}
+#step-wrapper{
+    overflow: hidden;
 }
 .step .title{
     float: left;
@@ -166,7 +181,7 @@ body{
     display: none;
     position: relative;
     top: 2px;
-    right: 110px;
+    right: 0px;
     font-size: 16px;
     letter-spacing: 0.5px;
     background: rgb(35, 175, 35);
@@ -266,13 +281,17 @@ input[type='checkbox']{
 }
 #progress{
     float: left;
-    margin-top: 20px;
-    width: 48%;
+    margin-top: 70px;
+    width: 98.5%;
+    background: rgb(29, 29, 29);
+    padding: 10px;
     position: relative;
+    border-radius: 5px;
 }
 #progress-bar{
-    width: 65%;
+    width: 48%;
     float: left;
+    overflow: hidden;
     background: url(../img/bg.png);
     border: 2px solid #FFF;
     height: 25px;
@@ -290,6 +309,7 @@ input[type='checkbox']{
 }
 #progress-step{
     float: right;
+    margin-right: 20px;
 }
 #progress-step p{
     color: #FFF;
@@ -300,5 +320,34 @@ input[type='checkbox']{
     font-weight: bold;
 }
 #result{
+    display: none;
     clear: both;
+    width: 48%;
+    margin-top: 50px;
+    position: relative;
+    background: rgb(250,250,250);
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    border: 5px solid rgb(32, 180, 32);
 }
+#result > h2{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: bold;
+    color: #424242;
+    margin-top: 5px;
+}
+#in-total{
+    padding: 20px;
+}
+#in-total p{
+    border-bottom: 1px solid rgb(231, 231, 231);
+    padding: 7px 5px;
+
+}
+#in-total p span{
+    font-weight: bold;
+}
+

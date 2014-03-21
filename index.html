@@ -9,8 +9,8 @@
 <script src="js/scripts.js"></script>
 </head>
 <body>
-    <h1>Калькулятор стоимости сайта</h1>
     <div id="wrapper">
+    	<h1>Калькулятор стоимости сайта</h1>
     	<div id="step-wrapper">
 	    	<div class="step step-1">
 	    		<div class="step-inner">
@@ -79,7 +79,7 @@
 						<span>Количество страниц:</span>
 		                <input type="text" id="desing-page" maxlength="2">
 		    		</div>
-		    		<a href="#" class="next-step">Вперед</a>
+		    		<a href="step2" class="next-step">Вперед</a>
 		    		<div class="overlay">
 		    			<span class="icon-ok"></span>
 		    			<p>Выбрано</p>
@@ -87,19 +87,19 @@
 	    		</div>
 	    		<div class="arr arrow-1"></div>
 	    	</div>
-	    	<div class="step step-2">
+	    	<div class="step step-2" id="step2">
 	    		<div class="step-inner">
-	    			<h2>Тип HTML-верстка:</h2>
+	    			<h2>Тип HTML-верстки:</h2>
 		    		<div class="item-type">
 		    			<div class="title">
-		    				<a href="#">Фиксированная</a>
+		    				<a href="#">Фиксированный</a>
 		    				<div class="hide-desc">
 		    					Верстка сайта, когда его ширина всегда одинакова вне зависимости от экрана посетителя. Обычно используется ширина 980px, которая адаптирована к планшетам и мониторам, от 1024px.
 		    				</div>	
 		    			</div>
 		    			<div class="check">
 		    				<span class="price">
-		    					<span class="cost">1500</span>руб.
+		    					<span class="cost">1500 </span>руб.
 		    				</span>
 		    				<input id="check5" type="checkbox" >
 							<label for="check5" class="un-check"></label>
@@ -107,14 +107,14 @@
 		    		</div>
 		    		<div class="item-type">
 		    			<div class="title">
-		    				<a href="#">Резиновая</a>
+		    				<a href="#">Резиновый</a>
 		    				<div class="hide-desc">
 		    					 Верстка, не имеющая постоянной ширины. Адаптируется к ширине экрана посетителя и как правило задается в процентах.
 		    				</div>	
 		    			</div>
 		    			<div class="check">
 		    				<span class="price">
-		    					<span class="cost">2500</span>руб.
+		    					<span class="cost">2500 </span>руб.
 		    				</span>
 		    				<input id="check6" type="checkbox" >
 							<label for="check6" class="un-check"></label>
@@ -122,14 +122,14 @@
 		    		</div>
 		    		<div class="item-type">
 		    			<div class="title">
-		    				<a href="#">Адаптивная</a>
+		    				<a href="#">Адаптивный</a>
 		    				<div class="hide-desc">
 						 		В соответствии с названием адаптируется к экрану, однако не только в части ширины, но и его ориентации (вертикаль/горизонталь) и даже подстраивается под конкретный тип устройства. Позволяет полностью перестраивать дизайн сайта для просмотра на различных мониторах и мобильных гаджетах.
 		    				</div>	
 		    			</div>
 		    			<div class="check">
 		    				<span class="price">
-		    					<span class="cost">4000</span>руб.
+		    					<span class="cost">4000 </span>руб.
 		    				</span>
 		    				<input id="check7" type="checkbox" >
 							<label for="check7" class="un-check"></label>
@@ -139,7 +139,7 @@
 						<span>Количество страниц:</span>
 		                <input type="text" id="html-page" maxlength="6">
 		    		</div>
-		    		<a href="#" class="next-step">Вперед</a>
+		    		<a href="#step3" class="next-step scroll">Вперед</a>
 		    		<div class="overlay">
 		    			<span class="icon-ok"></span>
 		    			<p>Выбрано</p>
@@ -147,9 +147,9 @@
 	    		</div>
 	    		<div class="arr arrow-2"></div>
 	    	</div>
-	    	<div class="step step-3">
+	    	<div class="step step-3" id="step3">
 	    		<div class="step-inner">
-	    			<h2>Функционал:</h2>
+	    			<h2>Выберите Функционал:</h2>
 		    		<div class="item-type">
 		    			<div class="title">
 		    				<a href="#">Интеграция на CMS</a>
@@ -160,7 +160,7 @@
 		    			</div>
 		    			<div class="check">
 		    				<span class="price">
-		    					<span class="cost">6500</span>руб.
+		    					<span class="cost">6500 </span>руб.
 		    				</span>
 		    				<input id="check8" type="checkbox" >
 							<label for="check8" class="un-check"></label>
@@ -175,7 +175,7 @@
 		    			</div>
 		    			<div class="check">
 		    				<span class="price">
-		    					<span class="cost">1500</span>руб.
+		    					<span class="cost">1500 </span>руб.
 		    				</span>
 		    				<input id="check9" type="checkbox" >
 							<label for="check9" class="un-check"></label>	
@@ -190,7 +190,7 @@
 		    			</div>
 		    			<div class="check">
 		    				<span class="price">
-		    					<span class="cost">3500</span>руб.
+		    					<span class="cost">3500 </span>руб.
 		    				</span>
 		    				<input id="check10" type="checkbox" >
 							<label for="check10" class="un-check"></label>
@@ -205,7 +205,7 @@
 		    			</div>
 		    			<div class="check">
 		    				<span class="price">
-		    					<span class="cost">1500</span>руб.
+		    					<span class="cost">1500 </span>руб.
 		    				</span>
 		    				<input id="check11" type="checkbox" >
 							<label for="check11" class="un-check"></label>
@@ -220,7 +220,7 @@
 		    			</div>
 		    			<div class="check">
 		    				<span class="price">
-		    					<span class="cost">6500</span>руб.
+		    					<span class="cost">6500 </span>руб.
 		    				</span>
 		    				<input id="check12" type="checkbox" >
 							<label for="check12" class="un-check"></label>	
@@ -235,7 +235,7 @@
 		    			</div>
 		    			<div class="check">
 		    				<span class="price">
-		    					<span class="cost">1500</span>руб.
+		    					<span class="cost">1500 </span>руб.
 		    				</span>
 		    				<input id="check13" type="checkbox" >
 							<label for="check13" class="un-check"></label>	
@@ -250,7 +250,7 @@
 		    			</div>
 		    			<div class="check">
 		    				<span class="price">
-		    					<span class="cost">2500</span>руб.
+		    					<span class="cost">2500 </span>руб.
 		    				</span>
 		    				<input id="check14" type="checkbox" >
 							<label for="check14" class="un-check"></label>
@@ -265,7 +265,7 @@
 		    			</div>
 		    			<div class="check">
 		    				<span class="price">
-		    					<span class="cost">2500</span>руб.
+		    					<span class="cost">2500 </span>руб.
 		    				</span>
 		    				<input id="check15" type="checkbox" >
 							<label for="check15" class="un-check"></label>	
@@ -280,7 +280,7 @@
 		    			</div>
 		    			<div class="check">
 		    				<span class="price">
-		    					<span class="cost">1500</span>руб.
+		    					<span class="cost">1500 </span>руб.
 		    				</span>
 		    				<input id="check16" type="checkbox" >
 							<label for="check16" class="un-check"></label>
@@ -306,7 +306,7 @@
 		    			</div>
 		    			<div class="check">
 		    				<span class="price">
-		    					<span class="cost">12000</span>руб.
+		    					<span class="cost">12000 </span>руб.
 		    				</span>
 		    				<input id="check17" type="checkbox" >
 							<label for="check17" class="un-check"></label>	
@@ -321,7 +321,7 @@
 		    			</div>
 		    			<div class="check">
 		    				<span class="price">
-		    					<span class="cost">30000</span>руб.
+		    					<span class="cost">30000 </span>руб.
 		    				</span>
 		    				<input id="check18" type="checkbox" >
 							<label for="check18" class="un-check"></label>		
@@ -336,7 +336,7 @@
 		    			</div>
 		    			<div class="check">
 		    				<span class="price">
-		    					<span class="cost">8000</span>руб.
+		    					<span class="cost">8000 </span>руб.
 		    				</span>
 		    				<input id="check19" type="checkbox" >
 							<label for="check19" class="un-check"></label>	
@@ -351,7 +351,7 @@
 		    			</div>
 		    			<div class="check">
 		    				<span class="price">
-		    					<span class="cost">5000</span>руб.
+		    					<span class="cost">5000 </span>руб.
 		    				</span>
 		    				<input id="check20" type="checkbox" >
 							<label for="check20" class="un-check"></label>		
@@ -366,21 +366,20 @@
 		    			</div>
 		    			<div class="check">
 		    				<span class="price">
-		    					<span class="cost">4000</span>руб.
+		    					<span class="cost">0 </span>руб.
 		    				</span>
 		    				<input id="check21" type="checkbox" >
 							<label for="check21" class="un-check"></label>		
 		    			</div>
 		    		</div>
-		    		<a href="#" class="next-step">Готово</a>
+		    		<a href="#progress-bar" class="next-step scroll">Готово</a>
 		    		<div class="overlay">
 		    			<span class="icon-ok"></span>
 		    			<p>Выбрано</p>
 		    		</div>
 	    		</div>
 	    	</div>
-    	</div>
-    	<div id="progress">
+	    	<div id="progress">
     		<div id="progress-bar">
     			<div id="progress-inner">0%</div>
     		</div>
@@ -388,6 +387,7 @@
     			<p>шаг <span>1</span> из <span>4</span></p>
     			<a href="#" id="button-payment">Расчитать</a>
     		</div>
+    	</div>
     	</div>
     	<div id="result">
     		<h2>Расчет стоимости сайта:</h2>

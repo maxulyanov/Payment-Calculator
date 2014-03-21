@@ -18,6 +18,7 @@ $(function(){
         if($(parentStep).find('[type="checkbox"]:checked').length >= 1){
             if(parentStep.hasClass('step-1')){
                 if($('#desing-page').val() !== '' && $('#desing-page').val() !== '0'){
+                    $('#desing-page').css('border', '2px solid rgb(35, 175, 35)')
                     $(this).hide();
                     $(this).parents('.step').find('.overlay').animate({
                         opacity : 'show'
@@ -34,11 +35,13 @@ $(function(){
                     stepPlus();
                 }
                 else{
+                    $('#desing-page').css('border', '2px solid #FA7575')
                     alert('Укажите количество страниц для дизайна!')
                 }
             }
             else if(parentStep.hasClass('step-2')){
-                if($('#html-page').val() !== ''){
+                if($('#html-page').val() !== '' && $('#html-page').val() !== '0'){
+                    $('#html-page').css('border', '2px solid rgb(35, 175, 35)')
                     $(this).hide();
                     $(this).parents('.step').find('.overlay').animate({
                         opacity : 'show'
@@ -55,6 +58,7 @@ $(function(){
                     stepPlus();
                 }
                 else{
+                    $('#html-page').css('border', '2px solid #FA7575')
                     alert('Укажите количество страниц для HTML-верстки!')
                 }
             }
@@ -81,8 +85,8 @@ $(function(){
                     });
                 progressPlus();
                 stepPlus();
-                $('#progress-step > p').hide(400);
-                $('#button-payment').show(400);
+                $('#progress-step > p').hide(50);
+                $('#button-payment').show(400)
             }
         }
         else{
@@ -102,8 +106,11 @@ $(function(){
         }
     });
 
+    var count = 0;
+
     $('#button-payment').on('click', function(event){
         event.preventDefault();
+        $(this).animate({'opacity' : '0'})
         $('.active-item').each(function() {
             var costTxt = $(this).find('.check').find('.price').text();
             var cost = $(this).find('.check').find('.cost').text();
@@ -112,20 +119,21 @@ $(function(){
             var parent = $(this).parents('.step');
             if(parent.hasClass('step-1')){
                 var numD = $('#desing-page').val();
-                itemOrder  = 'Дизайн - ' + itemOrder + 'x ' + numD + ' (стр)';
+                itemOrder  = '<span>Дизайн - </span>' + itemOrder + 'x ' + numD + ' (страниц)';
                 n1 = cost * parseFloat(numD);
             }
             if(parent.hasClass('step-2')){
                 var numH = $('#html-page').val();
-                itemOrder  = 'HTML-верстка - ' + itemOrder + 'x ' + numH + ' (стр)';
+                itemOrder  = '<span>Тип верстки - </span>' + itemOrder + 'x ' + numH + ' (страниц)';
                 n2 = cost * parseFloat(numH);
             }
             if(parent.hasClass('step-3')){
-                itemOrder  = 'Добавить на сайт - ' + itemOrder;
+                count++;
+                itemOrder  = '<span>' + count +'.'+ ' Функционал - ' + '</span>' + itemOrder;
                 n3 += parseFloat(cost);
             }
             if(parent.hasClass('step-4')){
-                itemOrder  = 'SEO - ' + itemOrder;
+                itemOrder  = '<span>Seo - </span>' + itemOrder;
                 n4 += parseFloat(cost);
             }
             arr.push(itemOrder);
@@ -136,7 +144,11 @@ $(function(){
         for(var i = 0, cacheArr = arr.length;i <cacheArr; i++){
             $('#in-total').append('<p>' + arr[i] + '</p>');
         }
-        $('#in-total').append('<h2>' +  total + '</h2>');
+        $('#in-total').append('<h2>' + 'Общая стоимость:' +  total + '</h2>');
+        var height=$("body").height(); 
+        $("body").animate({"scrollTop":height},"slow"); 
+        $('#result').slideDown(600);
+
     })
 
 
@@ -185,6 +197,14 @@ $(function(){
         }
     });
 
+    //Скролинг
+    $('a.scroll[href^="#"]').click(function(){
+        var target = $(this).attr('href');
+        $('html, body').animate({scrollTop: $(target).offset().top + 600}, 800);
+        console.log(target)
+        return false; 
+   });
+
 
     //Скрытое описание
     $('.hide-desc').hide();
@@ -199,8 +219,10 @@ $(function(){
         $('#progress-step > p > span:first').text(step);
     }
     function progressPlus(){
-        $('#progress-inner').animate({width : '+=25%'});
+        $('#progress-inner').animate({width : '+=25.1%'});
         procent +=25;
+        var p100 = 'Выполнено'
         $('#progress-inner').text(procent + '%');
+        if($('#progress-inner').text() == '100%') $('#progress-inner').text(p100)
     }
 });
