@@ -108,6 +108,7 @@ $(function(){
 
     var count = 0;
 
+    //Расчет стоимости
     $('#button-payment').on('click', function(event){
         event.preventDefault();
         $(this).animate({'opacity' : '0'})
@@ -115,25 +116,25 @@ $(function(){
             var costTxt = $(this).find('.check').find('.price').text();
             var cost = $(this).find('.check').find('.cost').text();
             var txt = $(this).find('.title a').text();
-            var itemOrder = txt + costTxt;
+            var itemOrder = txt + '<span>' + costTxt +'</span>';
             var parent = $(this).parents('.step');
             if(parent.hasClass('step-1')){
                 var numD = $('#desing-page').val();
-                itemOrder  = '<span>Дизайн - </span>' + itemOrder + 'x ' + numD + ' (страниц)';
+                itemOrder  = '<span class="color1">Дизайн &mdash; </span>' + itemOrder + 'x ' + numD + ' (страниц)';
                 n1 = cost * parseFloat(numD);
             }
             if(parent.hasClass('step-2')){
                 var numH = $('#html-page').val();
-                itemOrder  = '<span>Тип верстки - </span>' + itemOrder + 'x ' + numH + ' (страниц)';
+                itemOrder  = '<span class="color2">Тип верстки &mdash; </span>' + itemOrder + 'x ' + numH + ' (страниц)';
                 n2 = cost * parseFloat(numH);
             }
             if(parent.hasClass('step-3')){
                 count++;
-                itemOrder  = '<span>' + count +'.'+ ' Функционал - ' + '</span>' + itemOrder;
+                itemOrder  = '<span class="color3">' + count +'.'+ ' Функционал &mdash; ' + '</span>' + itemOrder;
                 n3 += parseFloat(cost);
             }
             if(parent.hasClass('step-4')){
-                itemOrder  = '<span>Seo - </span>' + itemOrder;
+                itemOrder  = '<span class="color4">Seo &mdash; </span>' + itemOrder;
                 n4 += parseFloat(cost);
             }
             arr.push(itemOrder);
@@ -144,12 +145,26 @@ $(function(){
         for(var i = 0, cacheArr = arr.length;i <cacheArr; i++){
             $('#in-total').append('<p>' + arr[i] + '</p>');
         }
-        $('#in-total').append('<h2>' + 'Общая стоимость:' +  total + '</h2>');
+        $('#in-total').append('<h2>' + 'Общая стоимость:' + '<span>' +  total + 'руб.' + '</span>' + '</h2>');
         var height=$("body").height(); 
         $("body").animate({"scrollTop":height},"slow"); 
         $('#result').slideDown(600);
 
     })
+
+    //Оформить заявку
+    $('#button-order').on('click', function(event){
+        event.preventDefault();
+        $('#form-wrap').animate({
+                opacity: "show",
+                left: '4%'
+        }, 800);
+        $('.arrow-4').delay(200).animate({
+            opacity: "show",
+            right : "-35px"
+        }, 400);
+        $(this).off();
+    });
 
 
     //Возможность выбрать только один из чеков для блоков .step-1 и .step-2

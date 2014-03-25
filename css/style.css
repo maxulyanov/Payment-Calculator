@@ -208,7 +208,9 @@ input[type='checkbox']{
     border-bottom: 1px dashed #3EB85B;
 }
 
-#button-payment{
+#button-payment,
+#button-order,
+.order-form button{
     display: none;
     position: relative;
     top: 2px;
@@ -220,14 +222,16 @@ input[type='checkbox']{
     color: #FFF;
     padding: 2px 10px;
 }
-
+#button-payment:hover{
+    color:#000;
+}
 .arr{
     display: none;
     position: absolute;
     background: url(../img/arrow.png) 0 0 no-repeat;
     z-index: 1;
 }
-.arrow-1{
+.arrow-1, .arrow-4{
     top: 37%;
     right: 0px;
     height: 55px;
@@ -319,17 +323,19 @@ input[type='checkbox']{
 }
 #result{
     display: none;
-    clear: both;
-    width: 48%;
+    float:left;
+    width: 47.2%;
     margin-top: 50px;
     position: relative;
+    z-index: 3;
     background: rgb(250,250,250);
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
     border-radius: 3px;
     border: 5px solid rgb(32, 180, 32);
 }
-#result > h2{
+#result > div > h2,
+#form-wrap > h2{
     text-align: center;
     text-transform: uppercase;
     font-size: 18px;
@@ -337,13 +343,19 @@ input[type='checkbox']{
     color: #424242;
     margin-top: 5px;
 }
-#in-total{
-    padding: 20px;
+#result > div > h2{
+    margin-bottom: 20px;
+}
+.wrap{
+    position: relative;
+    z-index: 2;
+    background: #FFF;
 }
 #in-total p{
-    padding: 10px 5px;
-    border: 1px solid rgb(231, 231, 231);
-    margin-bottom: 5px;
+    padding: 10px 5px 10px 20px;
+    border-bottom: 2px solid rgb(231, 231, 231);
+    border-top: 1px solid rgb(241, 241, 241);
+    margin-bottom: 7px;
     background: whitesmoke;
     font-size: 17px;
 }
@@ -355,8 +367,10 @@ input[type='checkbox']{
 #in-total h2{
     margin-top: 10px;
     background: #F1F1F1;
-    padding: 10px 5px;
-    border: 1px solid rgb(231, 231, 231);
+    font-size: 18px;
+    padding: 10px 5px 10px 20px;
+    border-top: 1px solid rgb(241, 241, 241);
+    border-bottom: 2px solid rgb(231, 231, 231);
 }
 #in-total h2 span{
     font-size: 22px;
@@ -372,7 +386,7 @@ input[type='checkbox']{
     text-transform: uppercase;
 }
 #in-total .color1{
-    color: rgb(61, 151, 19);
+    color: rgb(98, 199, 52);
 }
 #in-total .color2{
     color: rgb(56, 171, 216);
@@ -382,4 +396,67 @@ input[type='checkbox']{
 }
 #in-total .color4{
     color: rgb(255, 194, 0);
+}
+#button-order{
+    display: inline-block;
+    margin: 15px 0 20px 15px;
+    font-weight: bold;
+    padding: 7px;
+}
+#button-order:hover{
+    color:#000;
+}
+
+#form-wrap{
+    display: none;
+    margin-top: 50px;
+    width: 47.2%;
+    position: relative;
+    left:-48%;
+    float:left;
+    z-index: 2;
+    background: rgb(250,250,250);
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    border: 5px solid rgb(32, 180, 32);
+}
+.wrap{
+    position: relative;
+    z-index: 2;
+}
+.order-form{
+    text-align: center;
+    margin-top: 20px;
+}
+.order-form p{
+    margin-bottom: 8px;
+}
+.order-form input,
+.order-form textarea{
+   border: 2px solid rgb(231, 231, 231);
+    width: 250px;
+    height: 35px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: bold;
+    text-indent: 10px;
+    font-size: 15px;
+    color: #5F5F5F;
+}
+.order-form textarea{
+    height: 100px;
+    outline: none;
+}
+.order-form button{
+    display: block;
+    margin: 0 auto;
+    border: none;
+    padding: 7px 20px;
+    font-weight: bold;
+    margin-bottom: 17px;
+    border-bottom: 2px solid rgb(19, 134, 19);
+    cursor: pointer;
+}
+.order-form button:hover{
+    color:#000;
 }

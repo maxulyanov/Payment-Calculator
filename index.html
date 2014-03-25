@@ -390,9 +390,23 @@
     	</div>
     	</div>
     	<div id="result">
-    		<h2>Расчет стоимости сайта:</h2>
-    		<div id="in-total"></div>
-    		<a href="#" id="button-order">Оформить заявку</a>
+    		<div class="wrap">
+    			<h2>Расчет стоимости сайта:</h2>
+	    		<div id="in-total"></div>
+	    		<a href="#" id="button-order">Оформить заявку</a>
+	    	</div>
+	    		<div class="arr arrow-4"></div>
+    	</div>
+    	<div id="form-wrap">
+    		<h2>Оставьте заявку и мы перезвоним:</h2>
+			<form class="order-form">
+				<p><input name="name" onFocus="if(this.value=='Ваше имя') this.value='';" onBlur="if(!this.value) this.value='Ваше имя';" type="text" value="Ваше имя"/></p>
+				<p><input onkeyup="this.value = this.value.replace (/\D/, '')" name="phone" onFocus="if(this.value=='Ваш телефон') this.value='';" onBlur="if(!this.value) this.value='Ваш телефон';" type="text" value ="Ваш телефон"/></p>
+				<p><input name="email" onFocus="if(this.value=='Ваш email') this.value='';" onBlur="if(!this.value) this.value='Ваш email';" type="email" value="Ваш email"/></p>
+				<p><textarea name="comment" onFocus="if(this.value=='Ваши пожелания') this.value='';" onBlur="if(!this.value) this.value='Ваши пожелания';">Ваши пожелания</textarea></p>
+				<input type="hidden" class="hid" name="price" value="">
+				<p><button type="submit">Заказать</button></p>
+			</form>
     	</div>
     </div>
 </body>
