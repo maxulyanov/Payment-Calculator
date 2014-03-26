@@ -1,5 +1,4 @@
-$(function(){
-
+jQuery(document).ready(function($){
     //Переменные
     var step = 1,
         total = 0,
@@ -145,7 +144,7 @@ $(function(){
         for(var i = 0, cacheArr = arr.length;i <cacheArr; i++){
             $('#in-total').append('<p>' + arr[i] + '</p>');
         }
-        $('#in-total').append('<h2>' + 'Общая стоимость:' + '<span>' +  total + 'руб.' + '</span>' + '</h2>');
+        $('#in-total').append('<h2>' + 'Общая стоимость сайта:' + '<span>' +  total + 'руб.' + '</span>' + '</h2>');
         var height=$("body").height(); 
         $("body").animate({"scrollTop":height},"slow"); 
         $('#result').slideDown(600);

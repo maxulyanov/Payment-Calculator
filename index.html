@@ -7,6 +7,7 @@
 <link href="css/style.css" type="text/css" rel="stylesheet">
 <script src="js/jquery-1.10.2.js"></script>
 <script src="js/scripts.js"></script>
+<script src="js/contactform.js"></script>
 </head>
 <body>
     <div id="wrapper">
@@ -400,9 +401,9 @@
     	<div id="form-wrap">
     		<h2>Оставьте заявку и мы перезвоним:</h2>
 			<form class="order-form">
-				<p><input name="name" onFocus="if(this.value=='Ваше имя') this.value='';" onBlur="if(!this.value) this.value='Ваше имя';" type="text" value="Ваше имя"/></p>
-				<p><input onkeyup="this.value = this.value.replace (/\D/, '')" name="phone" onFocus="if(this.value=='Ваш телефон') this.value='';" onBlur="if(!this.value) this.value='Ваш телефон';" type="text" value ="Ваш телефон"/></p>
-				<p><input name="email" onFocus="if(this.value=='Ваш email') this.value='';" onBlur="if(!this.value) this.value='Ваш email';" type="email" value="Ваш email"/></p>
+				<p><input name="name" class="o-name" onFocus="if(this.value=='Ваше имя') this.value='';" onBlur="if(!this.value) this.value='Ваше имя';" type="text" value="Ваше имя"/></p>
+				<p><input class="o-phone" onkeyup="this.value = this.value.replace (/\D/, '')" name="phone" onFocus="if(this.value=='Ваш телефон') this.value='';" onBlur="if(!this.value) this.value='Ваш телефон';" type="text" value ="Ваш телефон"/></p>
+				<p><input class="o-email" name="email" onFocus="if(this.value=='Ваш email') this.value='';" onBlur="if(!this.value) this.value='Ваш email';" type="text" value="Ваш email"/></p>
 				<p><textarea name="comment" onFocus="if(this.value=='Ваши пожелания') this.value='';" onBlur="if(!this.value) this.value='Ваши пожелания';">Ваши пожелания</textarea></p>
 				<input type="hidden" class="hid" name="price" value="">
 				<p><button type="submit">Заказать</button></p>
