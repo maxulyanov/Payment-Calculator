@@ -8,8 +8,8 @@ jQuery(document).ready(function($){
         n4 = 0,
         procent = 0,
         arr = [];
-
-
+	
+	
     //По клику "Далее"
     $('.next-step').on('click', function(event){
         event.preventDefault();
@@ -119,21 +119,21 @@ jQuery(document).ready(function($){
             var parent = $(this).parents('.step');
             if(parent.hasClass('step-1')){
                 var numD = $('#desing-page').val();
-                itemOrder  = '<span class="color1">Дизайн &mdash; </span>' + itemOrder + 'x ' + numD + ' (страниц)';
+                itemOrder  = '<span class="color1">Дизайн &mdash;</span>' + itemOrder + 'x ' + numD + ' (страниц)';
                 n1 = cost * parseFloat(numD);
             }
             if(parent.hasClass('step-2')){
                 var numH = $('#html-page').val();
-                itemOrder  = '<span class="color2">Тип верстки &mdash; </span>' + itemOrder + 'x ' + numH + ' (страниц)';
+                itemOrder  = '<span class="color2">Тип верстки &mdash;</span>' + itemOrder + 'x ' + numH + ' (страниц)';
                 n2 = cost * parseFloat(numH);
             }
             if(parent.hasClass('step-3')){
                 count++;
-                itemOrder  = '<span class="color3">' + count +'.'+ ' Функционал &mdash; ' + '</span>' + itemOrder;
+                itemOrder  = '<span class="color3">' + count +'.'+ ' Функционал &mdash;</span>' + itemOrder;
                 n3 += parseFloat(cost);
             }
             if(parent.hasClass('step-4')){
-                itemOrder  = '<span class="color4">Seo &mdash; </span>' + itemOrder;
+                itemOrder  = '<span class="color4">Seo &mdash;</span>' + itemOrder;
                 n4 += parseFloat(cost);
             }
             arr.push(itemOrder);
@@ -164,7 +164,6 @@ jQuery(document).ready(function($){
         }, 400);
         $(this).off();
     });
-
 
     //Возможность выбрать только один из чеков для блоков .step-1 и .step-2
     $('.step-1 input[type="checkbox"],.step-2 input[type="checkbox"]')
@@ -211,13 +210,14 @@ jQuery(document).ready(function($){
         }
     });
 
+	
     //Скролинг
     $('a.scroll[href^="#"]').click(function(){
         var target = $(this).attr('href');
         $('html, body').animate({scrollTop: $(target).offset().top + 600}, 800);
         console.log(target)
         return false; 
-   });
+    });
 
 
     //Скрытое описание
@@ -225,8 +225,23 @@ jQuery(document).ready(function($){
     $('.title a').on('click', function(event){
          event.preventDefault();
         $(this).next('.hide-desc').toggle(250);
-    }); 
+    });
 
+	
+	//Затемнение	
+	$(window).bind("resize", function(){
+		$("#overlay").css("height", $(document).height());
+
+	});	
+
+	
+	//Релоад
+	$('.reload').on('click', function(event){
+		event.preventDefault();
+        location.reload();
+	});
+
+	
     //Вызываемые функции
     function stepPlus(){
         step++;

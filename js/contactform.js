@@ -27,13 +27,13 @@ $(".order-form").submit(function(){
 			}
 			else{
 				$(this).parent('p').removeClass('valid-error').addClass('valid-ok');
+				$('.email-addr').text(mailVal);
 			}
 		}
 	});
 	var hid = $('#in-total h2 span').text();
 	$('.hid').val(hid);
 	if($('.valid-error').length > 0){
-		console.log('дошли до сюда')
 		return false;
 	}
 	var str = $(this).serialize();
@@ -42,7 +42,12 @@ $(".order-form").submit(function(){
 		url: "php/order.php",
 		data: str,
 		success: function(msg){
-			alert('Заявка отправлена!')
+			$('#overlay').css({
+				'opacity': '0.6',
+				'height' : $(document).height()
+			});
+			$('#success').fadeIn();
+			$('#overlay').fadeIn();
 		}
 	});
 	return false;
