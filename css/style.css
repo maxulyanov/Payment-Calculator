@@ -438,13 +438,14 @@ input[type='checkbox']{
 }
 .order-form p{
     width: 50%;
-    margin: 0 auto 8px;
+    margin-bottom:8px;
     position: relative;
+	display:inline-block;
 }
 .order-form input,
 .order-form textarea{
    border: 2px solid rgb(231, 231, 231);
-    width: 250px;
+    width: 220px;
     height: 35px;
     font-family: 'Open Sans Condensed', sans-serif;
     font-weight: bold;
